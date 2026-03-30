@@ -59,13 +59,13 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
       triggerShake();
       return;
     }
-    
+
     try {
       // For demo purposes, we do a basic matching on email
       const res = await fetch('/api/users');
       const users = await res.json();
       const user = users.find((u: any) => u.email === loginEmail);
-      
+
       if (!user) throw new Error('ไม่พบข้อมูลผู้ใช้');
 
       localStorage.setItem('userId', user.id);
@@ -90,7 +90,7 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
       triggerShake();
       return;
     }
-    
+
     try {
       const res = await fetch('/api/users', {
         method: 'POST',
@@ -99,7 +99,7 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
       });
 
       if (!res.ok) throw new Error('Failed');
-      
+
       const data = await res.json();
       localStorage.setItem('userId', data.id);
 
@@ -131,9 +131,8 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
       }}
     >
       <div
-        className={`bg-white rounded-3xl w-full max-w-md shadow-2xl overflow-hidden transition-all duration-300 ${
-          shakeForm ? 'animate-[shake_0.5s_ease]' : ''
-        } ${isOpen ? 'scale-100 opacity-100' : 'scale-90 opacity-0'}`}
+        className={`bg-white rounded-3xl w-full max-w-md shadow-2xl overflow-hidden transition-all duration-300 ${shakeForm ? 'animate-[shake_0.5s_ease]' : ''
+          } ${isOpen ? 'scale-100 opacity-100' : 'scale-90 opacity-0'}`}
       >
         {/* Success Overlay */}
         {showSuccess && (
@@ -171,17 +170,15 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
           />
           <button
             onClick={() => setActiveTab('login')}
-            className={`flex-1 py-2.5 text-sm font-semibold rounded-lg relative z-10 transition-colors duration-300 cursor-pointer ${
-              activeTab === 'login' ? 'text-blue-600' : 'text-slate-400'
-            }`}
+            className={`flex-1 py-2.5 text-sm font-semibold rounded-lg relative z-10 transition-colors duration-300 cursor-pointer ${activeTab === 'login' ? 'text-blue-600' : 'text-slate-400'
+              }`}
           >
             เข้าสู่ระบบ
           </button>
           <button
             onClick={() => setActiveTab('register')}
-            className={`flex-1 py-2.5 text-sm font-semibold rounded-lg relative z-10 transition-colors duration-300 cursor-pointer ${
-              activeTab === 'register' ? 'text-blue-600' : 'text-slate-400'
-            }`}
+            className={`flex-1 py-2.5 text-sm font-semibold rounded-lg relative z-10 transition-colors duration-300 cursor-pointer ${activeTab === 'register' ? 'text-blue-600' : 'text-slate-400'
+              }`}
           >
             สมัครสมาชิก
           </button>
@@ -229,7 +226,7 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
                 </div>
               </div>
               <button className="w-full border-2 border-slate-200 text-slate-700 py-3 rounded-xl font-semibold hover:border-blue-400 hover:text-blue-600 transition-all duration-300 active:scale-95 text-sm cursor-pointer">
-                🔵 เข้าสู่ระบบด้วย LINE
+                🔵 เข้าสู่ระบบด้วย Google
               </button>
             </div>
           ) : (
@@ -280,9 +277,8 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
                       {[1, 2, 3, 4].map((level) => (
                         <div
                           key={level}
-                          className={`h-1.5 flex-1 rounded-full transition-all duration-500 ${
-                            level <= strength.level ? strength.color : 'bg-slate-200'
-                          }`}
+                          className={`h-1.5 flex-1 rounded-full transition-all duration-500 ${level <= strength.level ? strength.color : 'bg-slate-200'
+                            }`}
                         />
                       ))}
                     </div>
@@ -299,11 +295,10 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
                   value={regConfirm}
                   onChange={(e) => setRegConfirm(e.target.value)}
                   placeholder="••••••••"
-                  className={`w-full border p-3 rounded-xl bg-slate-50 focus:ring-2 focus:ring-blue-400 focus:border-blue-400 outline-none transition-all text-sm ${
-                    regConfirm && regConfirm !== regPassword
+                  className={`w-full border p-3 rounded-xl bg-slate-50 focus:ring-2 focus:ring-blue-400 focus:border-blue-400 outline-none transition-all text-sm ${regConfirm && regConfirm !== regPassword
                       ? 'border-red-300 focus:ring-red-300'
                       : 'border-slate-200'
-                  }`}
+                    }`}
                 />
                 {regConfirm && regConfirm !== regPassword && (
                   <p className="text-xs text-red-500 mt-1 animate-[fadeIn_0.3s_ease]">รหัสผ่านไม่ตรงกัน</p>
