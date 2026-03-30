@@ -39,6 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
 # Environment variables
 .env
 .env.local
@@ -48,4 +49,5 @@ next-env.d.ts
 
 # Prisma
 /prisma/db
+
 /app/generated/prisma

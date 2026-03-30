@@ -1,66 +1,9 @@
+import Link from 'next/link';
+import { doctorsData } from '../data/doctors';
+
 export default function DoctorTeam() {
-  const doctors = [
-    {
-      name: 'พญ. สุภาพร ศรีสุข',
-      specialty: 'อายุรกรรมทั่วไป',
-      experience: '12 ปี',
-      rating: 4.9,
-      reviews: 328,
-      avatar: '👩‍⚕️',
-      color: 'from-blue-100 to-blue-50',
-      available: true,
-    },
-    {
-      name: 'นพ. ธนพล จิตแพทย์',
-      specialty: 'จิตเวชศาสตร์',
-      experience: '15 ปี',
-      rating: 4.8,
-      reviews: 256,
-      avatar: '👨‍⚕️',
-      color: 'from-purple-100 to-purple-50',
-      available: true,
-    },
-    {
-      name: 'พญ. นิตยา ผิวงาม',
-      specialty: 'ตจวิทยา (ผิวหนัง)',
-      experience: '8 ปี',
-      rating: 4.9,
-      reviews: 412,
-      avatar: '👩‍⚕️',
-      color: 'from-pink-100 to-pink-50',
-      available: false,
-    },
-    {
-      name: 'นพ. วิชัย กระดูกแข็ง',
-      specialty: 'ศัลยกรรมกระดูก',
-      experience: '20 ปี',
-      rating: 4.7,
-      reviews: 189,
-      avatar: '👨‍⚕️',
-      color: 'from-green-100 to-green-50',
-      available: true,
-    },
-    {
-      name: 'พญ. อรุณี รักเด็ก',
-      specialty: 'กุมารเวชศาสตร์',
-      experience: '10 ปี',
-      rating: 5.0,
-      reviews: 567,
-      avatar: '👩‍⚕️',
-      color: 'from-orange-100 to-orange-50',
-      available: true,
-    },
-    {
-      name: 'นพ. สมชาย หัวใจดี',
-      specialty: 'อายุรกรรมหัวใจ',
-      experience: '18 ปี',
-      rating: 4.8,
-      reviews: 298,
-      avatar: '👨‍⚕️',
-      color: 'from-red-100 to-red-50',
-      available: true,
-    },
-  ];
+  // Show only top 3 doctors on the homepage
+  const doctors = doctorsData.slice(0, 3);
 
   return (
     <section className="py-20 bg-gradient-to-br from-slate-50 to-blue-50">
@@ -136,12 +79,12 @@ export default function DoctorTeam() {
 
         {/* View all */}
         <div className="text-center mt-12">
-          <button className="bg-white text-slate-700 px-8 py-3 rounded-xl font-semibold border-2 border-slate-200 hover:border-blue-400 hover:text-blue-600 transition-all duration-300 hover:-translate-y-0.5 active:scale-95 cursor-pointer group">
-            ดูแพทย์ทั้งหมด 500+ ท่าน{' '}
+          <Link href="/doctors" className="inline-block bg-white text-slate-700 px-8 py-3 rounded-xl font-semibold border-2 border-slate-200 hover:border-blue-400 hover:text-blue-600 transition-all duration-300 hover:-translate-y-0.5 active:scale-95 cursor-pointer group">
+            ดูแพทย์ทั้งหมด{' '}
             <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">
               →
             </span>
-          </button>
+          </Link>
         </div>
       </div>
     </section>

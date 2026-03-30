@@ -1,39 +1,11 @@
+import Link from 'next/link';
+import { articlesData } from '../data/articles';
+
 export default function HealthArticles() {
-  const articles = [
-    {
-      category: 'สุขภาพทั่วไป',
-      categoryColor: 'bg-green-100 text-green-700',
-      title: '10 วิธีเสริมภูมิคุ้มกันง่ายๆ ทำได้ทุกวัน',
-      excerpt:
-        'ภูมิคุ้มกันที่ดีเริ่มจากพฤติกรรมเล็กๆ ในชีวิตประจำวัน มาดูกันว่ามีวิธีไหนบ้างที่ทำได้ง่ายๆ แต่ได้ผลจริง...',
-      image: '🍎',
-      readTime: '5 นาที',
-      date: '20 มี.ค. 2026',
-    },
-    {
-      category: 'สุขภาพจิต',
-      categoryColor: 'bg-purple-100 text-purple-700',
-      title: 'รับมือกับความเครียดจากการทำงาน',
-      excerpt:
-        'Burnout ไม่ใช่เรื่องปกติ เรียนรู้ 7 สัญญาณเตือนและวิธีจัดการที่ถูกต้อง ก่อนที่ร่างกายจะส่งสัญญาณ...',
-      image: '🧘',
-      readTime: '8 นาที',
-      date: '18 มี.ค. 2026',
-    },
-    {
-      category: 'โภชนาการ',
-      categoryColor: 'bg-orange-100 text-orange-700',
-      title: 'อาหารต้าน Inflammation ที่ควรกินทุกวัน',
-      excerpt:
-        'การอักเสบเรื้อรังคือต้นเหตุของโรคร้ายหลายชนิด มาทำความรู้จักอาหารที่ช่วยลดการอักเสบในร่างกาย...',
-      image: '🥗',
-      readTime: '6 นาที',
-      date: '15 มี.ค. 2026',
-    },
-  ];
+  const articles = articlesData;
 
   return (
-    <section className="py-20 bg-slate-50">
+    <section id="articles" className="py-20 bg-slate-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-14">
           <span className="inline-block bg-pink-100 text-pink-700 px-4 py-1.5 rounded-full text-sm font-medium mb-4">
@@ -85,12 +57,15 @@ export default function HealthArticles() {
                 </p>
 
                 {/* Read More */}
-                <div className="flex items-center gap-1 text-blue-600 text-sm font-semibold">
+                <Link
+                  href={`/articles/${article.id}`}
+                  className="flex items-center gap-1 text-blue-600 text-sm font-semibold hover:text-blue-800 transition-colors cursor-pointer"
+                >
                   <span>อ่านเพิ่มเติม</span>
                   <span className="inline-block transition-transform duration-300 group-hover:translate-x-2">
                     →
                   </span>
-                </div>
+                </Link>
               </div>
             </article>
           ))}

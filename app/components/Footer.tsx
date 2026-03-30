@@ -9,10 +9,10 @@ export default function Footer() {
               <span className="text-2xl transition-transform duration-300 group-hover:rotate-12">
                 🩺
               </span>
-              <span className="text-xl font-bold text-white">HealthConnect</span>
+              <span className="text-xl font-bold text-white">AsthmaCare</span>
             </div>
             <p className="text-sm text-slate-400 leading-relaxed">
-              ดูแลคุณ เหมือนมีคุณหมอเป็นเพื่อนสนิทข้างกาย บริการปรึกษาแพทย์ออนไลน์ตลอด 24 ชั่วโมง
+              ดูแลผู้ป่วยโรคหอบหืดอย่างใกล้ชิด บริการปรึกษาแพทย์เฉพาะทางออนไลน์ตลอด 24 ชั่วโมง
             </p>
           </div>
 
@@ -22,22 +22,22 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <a href="#" className="hover:text-blue-400 transition-colors hover:translate-x-1 inline-block">
-                  ปรึกษาแพทย์ทั่วไป
+                  ปรึกษาอาการหอบกำเริบ
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-blue-400 transition-colors hover:translate-x-1 inline-block">
-                  แพทย์เฉพาะทาง
+                  แพทย์ระบบทางเดินหายใจและภูมิแพ้
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-blue-400 transition-colors hover:translate-x-1 inline-block">
-                  ตรวจสุขภาพถึงบ้าน
+                  ติดตามค่า Peak Flow ออนไลน์
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-blue-400 transition-colors hover:translate-x-1 inline-block">
-                  ส่งยาถึงบ้าน
+                  บริการส่งยาพ่นถึงบ้าน
                 </a>
               </li>
             </ul>
@@ -49,7 +49,7 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <a href="#" className="hover:text-blue-400 transition-colors hover:translate-x-1 inline-block">
-                  เกี่ยวกับ HealthConnect
+                  เกี่ยวกับ AsthmaCare
                 </a>
               </li>
               <li>
@@ -75,8 +75,8 @@ export default function Footer() {
             <h5 className="font-semibold text-white mb-4">ติดต่อเรา</h5>
             <ul className="space-y-2 text-sm">
               <li>📞 02-xxx-xxxx</li>
-              <li>📱 Line: @healthconnect</li>
-              <li>✉️ support@healthconnect.co.th</li>
+              <li>📱 Line: @AsthmaCare</li>
+              <li>✉️ support@AsthmaCare.co.th</li>
             </ul>
             <div className="mt-4">
               <p className="text-red-400 text-sm font-medium pulse-alert">🚨 เหตุฉุกเฉิน โทร 1669</p>
@@ -86,7 +86,7 @@ export default function Footer() {
 
         <div className="border-t border-slate-700 pt-6 text-center text-sm text-slate-500">
           <p>
-            © 2026 HealthConnect. สงวนลิขสิทธิ์ทุกประการ | ใบอนุญาตสถานพยาบาลเลขที่ XXXXX
+            © 2026 AsthmaCare. สงวนลิขสิทธิ์ทุกประการ | คลินิกเฉพาะทางโรคหอบหืดออนไลน์
           </p>
         </div>
       </div>

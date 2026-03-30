@@ -16,26 +16,25 @@ export default function HeroSection() {
 
         {/* Headline */}
         <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight">
-          ไม่ต้องรอคิวโรงพยาบาล ไม่ต้องเดินทางให้เหนื่อย <br />
-          <span className="gradient-text">ปรึกษาคุณหมอออนไลน์ได้ทันที</span>
+          ไม่ต้องทนหอบเหนื่อยกลางดึกอีกต่อไป <br />
+          <span className="gradient-text">ปรึกษาแพทย์เฉพาะทางโรคหอบหืดออนไลน์</span>
         </h2>
 
         <p className="text-base md:text-lg text-slate-600 mb-4 max-w-3xl mx-auto leading-relaxed">
-          สุขภาพดีเริ่มต้นที่ความใส่ใจ เลือกแพ็กเกจที่ใช่ เพื่อตัวคุณและคนที่คุณรัก
+          ดูแลอาการหอบหืดและภูมิแพ้ของคุณอย่างใกล้ชิด จัดการอาการกำเริบได้ทันท่วงที
         </p>
         <p className="text-sm md:text-base text-slate-500 mb-10 max-w-2xl mx-auto leading-relaxed">
-          เคยไหม? ป่วยตอนดึกแต่ไม่กล้าไปห้องฉุกเฉิน, กังวลกับผลตรวจสุขภาพแต่ไม่มีเวลาไปฟังผล,
-          หรืออยากปรึกษาเรื่องลูกแต่ไม่รู้จะถามใคร...
-          ให้เราดูแลคุณด้วยทีมแพทย์ผู้เชี่ยวชาญระดับมืออาชีพ
+          หอบกำเริบ หายใจมีเสียงหวีด ไอเรื้อรัง หรือต้องการปรึกษาวิธีการใช้ยาพ่น?
+          ให้ทีมแพทย์เฉพาะทางด้านระบบทางเดินหายใจดูแลคุณและคนที่คุณรักตลอด 24 ชั่วโมง
         </p>
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
             href="#packages"
-            className="inline-block bg-gradient-to-r from-orange-500 to-orange-600 text-white text-lg px-8 py-4 rounded-2xl font-semibold hover:shadow-xl hover:shadow-orange-200 transition-all duration-300 hover:-translate-y-1 btn-ripple active:scale-95"
+            className="inline-block bg-gradient-to-r from-cyan-500 to-teal-500 text-white text-lg px-8 py-4 rounded-2xl font-semibold hover:shadow-xl hover:shadow-cyan-200 transition-all duration-300 hover:-translate-y-1 btn-ripple active:scale-95"
           >
-            🎉 สมัครสมาชิกวันนี้ รับสิทธิ์ปรึกษาฟรีครั้งแรก
+            🎉 ดูแพ็กเกจดูแลโรคหอบหืดรายเดือน
           </a>
           <a
             href="#screening"

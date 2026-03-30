@@ -2,27 +2,27 @@ export default function HowItWorks() {
   const steps = [
     {
       icon: '📝',
-      title: 'สมัครสมาชิก',
-      desc: 'เลือกแพ็กเกจที่เหมาะกับคุณ สมัครง่ายใน 2 นาที',
+      title: 'สร้างบัญชี',
+      desc: 'เข้าสู่ระบบ หรือ สร้างบัญชีเพื่อบันทึกประวัติสุขภาพ',
       color: 'bg-blue-100 text-blue-600',
     },
     {
       icon: '📋',
-      title: 'กรอกอาการ',
-      desc: 'บอกอาการเบื้องต้นผ่านแบบฟอร์มคัดกรอง AI',
-      color: 'bg-green-100 text-green-600',
+      title: 'กรอกอาการหอบ',
+      desc: 'บอกอาการเบื้องต้นผ่านฟอร์มคัดกรองโรคหอบหืด',
+      color: 'bg-cyan-100 text-cyan-600',
     },
     {
       icon: '👨‍⚕️',
-      title: 'จับคู่แพทย์',
-      desc: 'ระบบจับคู่แพทย์ผู้เชี่ยวชาญที่เหมาะกับอาการคุณ',
-      color: 'bg-purple-100 text-purple-600',
+      title: 'พบแพทย์ผู้เชี่ยวชาญ',
+      desc: 'รอรับการติดต่อจากแพทย์ระบบทางเดินหายใจ',
+      color: 'bg-sky-100 text-sky-600',
     },
     {
       icon: '💊',
-      title: 'รับการรักษา',
-      desc: 'ปรึกษาแพทย์ผ่านวิดีโอคอล รับยาถึงบ้าน',
-      color: 'bg-orange-100 text-orange-600',
+      title: 'ปรับยา/ส่งยา',
+      desc: 'รับคำแนะนำการรักษา และจัดส่งยาพ่นควบคุมถึงบ้าน',
+      color: 'bg-teal-100 text-teal-600',
     },
   ];
 
@@ -41,7 +41,7 @@ export default function HowItWorks() {
 
         <div className="grid md:grid-cols-4 gap-8 max-w-4xl mx-auto relative">
           {/* Connecting Line (desktop only) */}
-          <div className="hidden md:block absolute top-12 left-[12%] right-[12%] h-0.5 bg-gradient-to-r from-blue-200 via-purple-200 to-orange-200" />
+          <div className="hidden md:block absolute top-12 left-[12%] right-[12%] h-0.5 bg-gradient-to-r from-blue-200 via-cyan-200 to-teal-200" />
 
           {steps.map((step, i) => (
             <div

@@ -95,7 +95,7 @@ export default function ScreeningForm() {
 
     const redFlags = document.querySelectorAll('.red-flag:checked');
     const isEmergency = redFlags.length > 0;
-    
+
     const activeSymptomsOpts = document.querySelectorAll('.symptom-checkbox:checked');
     const activeTexts = Array.from(activeSymptomsOpts)
       .map((cb) => (cb as HTMLInputElement).parentElement?.textContent?.trim())
@@ -103,7 +103,7 @@ export default function ScreeningForm() {
       .join(', ');
 
     const additionalData = (document.getElementById('additionalNotes') as HTMLTextAreaElement)?.value || '';
-    
+
     const symptomsString = `จุดที่ผิดปกติ: ${bodyPart}\nระยะเวลา: ${duration}\nอาการร่วม: ${activeTexts || 'ไม่มี'}\nเพิ่มเติม: ${additionalData}`;
 
     try {
@@ -129,8 +129,8 @@ export default function ScreeningForm() {
           '🚨',
           'สัญญาณอันตรายฉุกเฉิน!',
           'อาการที่คุณเลือกมีความเสี่ยงสูง:\n\n' +
-            flagTexts +
-            '\n\nกรุณาเดินทางไปห้องฉุกเฉิน (ER) หรือโทร 1669 ทันที!\nระบบไม่สามารถให้บริการปรึกษาออนไลน์สำหรับเคสฉุกเฉินได้ค่ะ'
+          flagTexts +
+          '\n\nกรุณาเดินทางไปห้องฉุกเฉิน (ER) หรือโทร 1669 ทันที!\nระบบไม่สามารถให้บริการปรึกษาออนไลน์สำหรับเคสฉุกเฉินได้ค่ะ'
         );
       } else {
         showModal(
@@ -179,13 +179,12 @@ export default function ScreeningForm() {
                 className="w-full border border-slate-200 p-3 rounded-xl bg-slate-50 focus:ring-2 focus:ring-blue-400 focus:border-blue-400 outline-none transition-all text-sm cursor-pointer"
               >
                 <option value="">กรุณาเลือก...</option>
-                <option value="head">ศีรษะ</option>
-                <option value="chest">ทรวงอก</option>
-                <option value="abdomen">ช่องท้อง</option>
-                <option value="skin">ผิวหนัง</option>
-                <option value="muscle">กล้ามเนื้อ/กระดูก</option>
-                <option value="mental">สุขภาพจิต/ความเครียด</option>
-                <option value="other">อื่นๆ</option>
+                <option value="airway_lower">ทางเดินหายใจส่วนล่าง (หลอดลม/ปอด)</option>
+                <option value="chest">หน้าอก/ทรวงอก</option>
+                <option value="airway_upper">ทางเดินหายใจส่วนบน (คัดจมูก/คอ)</option>
+                <option value="skin_allergy">ผิวหนัง (มีผื่นแพ้ร่วมด้วย)</option>
+                <option value="eyes_allergy">ดวงตา (คันตา/ตาแดงภูมิแพ้)</option>
+                <option value="other_allergic">คัดกรองอาการภูมิแพ้อื่นๆ</option>
               </select>
             </div>
 
@@ -239,12 +238,12 @@ export default function ScreeningForm() {
               <label className="block text-slate-700 mb-2 font-medium text-sm">อาการร่วมอื่นๆ</label>
               <div className="grid grid-cols-2 gap-3">
                 {[
-                  { value: 'fever', label: 'มีไข้' },
-                  { value: 'cough', label: 'ไอ/เจ็บคอ' },
-                  { value: 'nausea', label: 'คลื่นไส้/อาเจียน' },
-                  { value: 'diarrhea', label: 'ท้องเสีย' },
-                  { value: 'fatigue', label: 'อ่อนเพลีย' },
-                  { value: 'rash', label: 'ผื่น/คัน' },
+                  { value: 'wheezing', label: 'หายใจมีเสียงหวีด' },
+                  { value: 'shortness_of_breath', label: 'หอบเหนื่อย/หายใจไม่อิ่ม' },
+                  { value: 'chest_tightness', label: 'แน่นหน้าอก' },
+                  { value: 'chronic_cough', label: 'ไอเรื้อรัง (โดยเฉพาะกลางคืน)' },
+                  { value: 'allergies', label: 'มีน้ำมูก/จาม (ภูมิแพ้)' },
+                  { value: 'fatigue', label: 'อ่อนเพลีย/นอนไม่หลับ' },
                 ].map((symptom) => (
                   <label
                     key={symptom.value}
@@ -274,11 +273,11 @@ export default function ScreeningForm() {
 
             <div className="mb-8 space-y-2.5 bg-red-50 p-5 rounded-2xl border border-red-100">
               {[
-                'เจ็บแน่นหน้าอกร้าวไปที่แขน',
-                'หายใจลำบาก/หอบเหนื่อยรุนแรง',
-                'ปากเบี้ยว/แขนขาอ่อนแรงเฉียบพลัน',
-                'หมดสติ/ซึมลง',
-                'ชัก/เกร็งกระตุก',
+                'เขียวคล้ำบริเวณริมฝีปากหรือปลายนิ้ว (Cyanosis)',
+                'หายใจลำบากมากจนพูดเป็นประโยคยาวไม่ได้',
+                'ซี่โครงบานเวลาหายใจ (Chest retractions)',
+                'ซึมลง สับสน หรือหมดสติ',
+                'พ่นยาฉุกเฉินแล้วอาการไม่ดีขึ้นภายใน 15 นาที',
               ].map((flag, i) => (
                 <label
                   key={i}
@@ -316,9 +315,8 @@ export default function ScreeningForm() {
                 แนบรูปภาพอาการ / ผลเลือด (ถ้ามี)
               </label>
               <div
-                className={`border-2 border-dashed border-slate-200 rounded-2xl p-8 text-center hover:border-blue-400 hover:bg-blue-50 transition-all cursor-pointer ${
-                  isDragging ? 'drop-zone-active' : ''
-                }`}
+                className={`border-2 border-dashed border-slate-200 rounded-2xl p-8 text-center hover:border-blue-400 hover:bg-blue-50 transition-all cursor-pointer ${isDragging ? 'drop-zone-active' : ''
+                  }`}
                 onClick={() => fileInputRef.current?.click()}
                 onDragOver={(e: DragEvent<HTMLDivElement>) => {
                   e.preventDefault();

@@ -17,7 +17,7 @@ export default function Navbar({ onLoginClick }: NavbarProps) {
           <span className="text-3xl transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110">
             🩺
           </span>
-          <h1 className="text-2xl font-bold gradient-text">HealthConnect</h1>
+          <h1 className="text-2xl font-bold gradient-text">AsthmaCare</h1>
         </a>
 
         {/* Desktop Links */}
@@ -38,7 +38,7 @@ export default function Navbar({ onLoginClick }: NavbarProps) {
             </a>
           </li>
           <li>
-            <a href="#" className="nav-link text-slate-600 hover:text-blue-600 transition-colors py-1">
+            <a href="#articles" className="nav-link text-slate-600 hover:text-blue-600 transition-colors py-1">
               บทความสุขภาพ
             </a>
           </li>
@@ -103,7 +103,7 @@ export default function Navbar({ onLoginClick }: NavbarProps) {
             คัดกรองอาการ
           </a>
           <a
-            href="#"
+            href="#articles"
             onClick={() => setMenuOpen(false)}
             className="block py-2 text-slate-600 hover:text-blue-600 font-medium hover:translate-x-1 transition-all"
           >
