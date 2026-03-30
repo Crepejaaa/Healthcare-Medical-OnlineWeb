@@ -74,7 +74,7 @@ export default function ScreeningForm() {
   };
 
   // Submit
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     const bodyPart = (document.getElementById('bodyPart') as HTMLSelectElement)?.value;
     const duration = (document.getElementById('duration') as HTMLSelectElement)?.value;
 
@@ -87,26 +87,61 @@ export default function ScreeningForm() {
       return;
     }
 
+    const userId = localStorage.getItem('userId');
+    if (!userId) {
+      showModal('warning', '🔒', 'ผู้ใช้ยังไม่เข้าสู่ระบบ', 'กรุณาเข้าสู่ระบบก่อนทำการบันทึกประวัติสุขภาพ');
+      return;
+    }
+
     const redFlags = document.querySelectorAll('.red-flag:checked');
-    if (redFlags.length > 0) {
-      const flagTexts = Array.from(redFlags)
-        .map((cb) => '• ' + (cb as HTMLInputElement).parentElement?.textContent?.trim())
-        .join('\n');
-      showModal(
-        'emergency',
-        '🚨',
-        'สัญญาณอันตรายฉุกเฉิน!',
-        'อาการที่คุณเลือกมีความเสี่ยงสูง:\n\n' +
-          flagTexts +
-          '\n\nกรุณาเดินทางไปห้องฉุกเฉิน (ER) หรือโทร 1669 ทันที!\nระบบไม่สามารถให้บริการปรึกษาออนไลน์สำหรับเคสฉุกเฉินได้ค่ะ'
-      );
-    } else {
-      showModal(
-        'success',
-        '✅',
-        'ส่งข้อมูลสำเร็จ!',
-        'ระบบกำลังค้นหาแพทย์ที่เหมาะสมกับอาการของคุณ กรุณารอสักครู่...\n\nคุณจะได้รับการแจ้งเตือนเมื่อแพทย์พร้อมให้บริการ'
-      );
+    const isEmergency = redFlags.length > 0;
+    
+    const activeSymptomsOpts = document.querySelectorAll('.symptom-checkbox:checked');
+    const activeTexts = Array.from(activeSymptomsOpts)
+      .map((cb) => (cb as HTMLInputElement).parentElement?.textContent?.trim())
+      .filter(Boolean)
+      .join(', ');
+
+    const additionalData = (document.getElementById('additionalNotes') as HTMLTextAreaElement)?.value || '';
+    
+    const symptomsString = `จุดที่ผิดปกติ: ${bodyPart}\nระยะเวลา: ${duration}\nอาการร่วม: ${activeTexts || 'ไม่มี'}\nเพิ่มเติม: ${additionalData}`;
+
+    try {
+      const res = await fetch('/api/health-records', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          user_id: userId,
+          symptoms: symptomsString,
+          pain_scale: painLevel,
+          is_red_flag: isEmergency,
+        })
+      });
+
+      if (!res.ok) throw new Error('API request failed');
+
+      if (isEmergency) {
+        const flagTexts = Array.from(redFlags)
+          .map((cb) => '• ' + (cb as HTMLInputElement).parentElement?.textContent?.trim())
+          .join('\n');
+        showModal(
+          'emergency',
+          '🚨',
+          'สัญญาณอันตรายฉุกเฉิน!',
+          'อาการที่คุณเลือกมีความเสี่ยงสูง:\n\n' +
+            flagTexts +
+            '\n\nกรุณาเดินทางไปห้องฉุกเฉิน (ER) หรือโทร 1669 ทันที!\nระบบไม่สามารถให้บริการปรึกษาออนไลน์สำหรับเคสฉุกเฉินได้ค่ะ'
+        );
+      } else {
+        showModal(
+          'success',
+          '✅',
+          'ส่งข้อมูลสำเร็จ!',
+          'ระบบกำลังค้นหาแพทย์ที่เหมาะสมกับอาการของคุณ และบันทึกประวัติสุขภาพเรียบร้อยแล้ว'
+        );
+      }
+    } catch (e) {
+      showModal('warning', '⚠️', 'เกิดข้อผิดพลาด', 'ไม่สามารถบันทึกข้อมูลเข้าสู่ระบบได้ กรุณาลองใหม่อีกครั้ง');
     }
   };
 

@@ -54,21 +54,34 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
     setTimeout(() => setShakeForm(false), 500);
   };
 
-  const handleLogin = () => {
+  const handleLogin = async () => {
     if (!loginEmail || !loginPassword) {
       triggerShake();
       return;
     }
-    setShowSuccess(true);
-    setTimeout(() => {
-      setShowSuccess(false);
-      onClose();
-      setLoginEmail('');
-      setLoginPassword('');
-    }, 2000);
+    
+    try {
+      // For demo purposes, we do a basic matching on email
+      const res = await fetch('/api/users');
+      const users = await res.json();
+      const user = users.find((u: any) => u.email === loginEmail);
+      
+      if (!user) throw new Error('ไม่พบข้อมูลผู้ใช้');
+
+      localStorage.setItem('userId', user.id);
+      setShowSuccess(true);
+      setTimeout(() => {
+        setShowSuccess(false);
+        onClose();
+        setLoginEmail('');
+        setLoginPassword('');
+      }, 2000);
+    } catch (e) {
+      triggerShake();
+    }
   };
 
-  const handleRegister = () => {
+  const handleRegister = async () => {
     if (!regName || !regEmail || !regPhone || !regPassword || !regConfirm || !regAccept) {
       triggerShake();
       return;
@@ -77,17 +90,33 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
       triggerShake();
       return;
     }
-    setShowSuccess(true);
-    setTimeout(() => {
-      setShowSuccess(false);
-      onClose();
-      setRegName('');
-      setRegEmail('');
-      setRegPhone('');
-      setRegPassword('');
-      setRegConfirm('');
-      setRegAccept(false);
-    }, 2000);
+    
+    try {
+      const res = await fetch('/api/users', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: regEmail }), // Sending minimal dataset
+      });
+
+      if (!res.ok) throw new Error('Failed');
+      
+      const data = await res.json();
+      localStorage.setItem('userId', data.id);
+
+      setShowSuccess(true);
+      setTimeout(() => {
+        setShowSuccess(false);
+        onClose();
+        setRegName('');
+        setRegEmail('');
+        setRegPhone('');
+        setRegPassword('');
+        setRegConfirm('');
+        setRegAccept(false);
+      }, 2000);
+    } catch (e) {
+      triggerShake();
+    }
   };
 
   const strength = getPasswordStrength(regPassword);

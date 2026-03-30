@@ -108,9 +108,8 @@ export default function Testimonials() {
                     {Array.from({ length: 5 }).map((_, i) => (
                       <span
                         key={i}
-                        className={`text-sm transition-all duration-300 ${
-                          i < review.rating ? 'text-yellow-400 hover:scale-125' : 'text-slate-200'
-                        }`}
+                        className={`text-sm transition-all duration-300 ${i < review.rating ? 'text-yellow-400 hover:scale-125' : 'text-slate-200'
+                          }`}
                         style={{ transitionDelay: `${i * 50}ms` }}
                       >
                         ★
@@ -144,11 +143,10 @@ export default function Testimonials() {
                 <button
                   key={i}
                   onClick={() => goTo(i)}
-                  className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
-                    i === current
+                  className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${i === current
                       ? 'w-8 bg-blue-600'
                       : 'w-2.5 bg-slate-300 hover:bg-slate-400'
-                  }`}
+                    }`}
                   aria-label={`รีวิวที่ ${i + 1}`}
                 />
               ))}

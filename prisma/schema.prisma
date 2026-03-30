@@ -1,0 +1,47 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum Role {
+  PATIENT
+  DOCTOR
+  ADMIN
+}
+
+enum MembershipTier {
+  FREE
+  DAILY
+  ELITE
+  FAMILY
+}
+
+model User {
+  id              String         @id @default(uuid())
+  email           String         @unique
+  role            Role           @default(PATIENT)
+  membership_tier MembershipTier @default(FREE)
+  health_records  HealthRecord[]
+  created_at      DateTime       @default(now())
+  updated_at      DateTime       @updatedAt
+
+  @@map(name: "users")
+}
+
+model HealthRecord {
+  id          String   @id @default(uuid())
+  user_id     String
+  user        User     @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  symptoms    String
+  pain_scale  Int
+  is_red_flag Boolean  @default(false)
+  created_at  DateTime @default(now())
+
+  @@map(name: "health_records")
+}
