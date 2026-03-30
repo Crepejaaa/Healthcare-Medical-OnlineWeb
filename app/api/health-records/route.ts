@@ -1,6 +1,9 @@
 import { NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
 
+export const dynamic = "force-dynamic";
+export const runtime = "nodejs";
+
 // GET /api/health-records
 // You can pass a user_id via query params to filter: /api/health-records?user_id=123
 export async function GET(request: Request) {
