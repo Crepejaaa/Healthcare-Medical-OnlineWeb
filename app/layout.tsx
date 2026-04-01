@@ -10,7 +10,7 @@ const prompt = Prompt({
 });
 
 export const metadata: Metadata = {
-  title: "HealthConnect - ดูแลคุณ เหมือนเป็นเพื่อนสนิทข้างกาย",
+  title: "AsthmaCare - ดูแลคุณ เหมือนเป็นเพื่อนสนิทข้างกาย",
   description:
     "ปรึกษาแพทย์ออนไลน์ได้ทันที ตลอด 24 ชั่วโมง ไม่ต้องรอคิว ไม่ต้องเดินทาง เลือกแพ็กเกจที่ใช่สำหรับคุณ",
 };

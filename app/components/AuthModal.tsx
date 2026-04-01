@@ -294,7 +294,7 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
 
         <section>
           <h4 className="font-bold text-slate-800 mb-2">1. ข้อตกลงทั่วไป</h4>
-          <p>เมื่อท่านใช้บริการ HealthConnect ท่านตกลงที่จะปฏิบัติตามเงื่อนไขการใช้บริการฉบับนี้ หากท่านไม่เห็นด้วยกับเงื่อนไขใดๆ กรุณาหยุดใช้บริการทันที การใช้บริการอย่างต่อเนื่องถือว่าท่านยอมรับเงื่อนไขทั้งหมด</p>
+          <p>เมื่อท่านใช้บริการ AsthmaCare ท่านตกลงที่จะปฏิบัติตามเงื่อนไขการใช้บริการฉบับนี้ หากท่านไม่เห็นด้วยกับเงื่อนไขใดๆ กรุณาหยุดใช้บริการทันที การใช้บริการอย่างต่อเนื่องถือว่าท่านยอมรับเงื่อนไขทั้งหมด</p>
         </section>
 
         <section>
@@ -309,7 +309,7 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
 
         <section>
           <h4 className="font-bold text-slate-800 mb-2">3. ขอบเขตการให้บริการ</h4>
-          <p>HealthConnect เป็นแพลตฟอร์มที่ให้บริการ:</p>
+          <p>AsthmaCare เป็นแพลตฟอร์มที่ให้บริการ:</p>
           <ul className="list-disc pl-5 space-y-1 mt-2">
             <li>การปรึกษาแพทย์ทางไกล (Telemedicine) ผ่านระบบวิดีโอคอล</li>
             <li>การคัดกรองอาการเบื้องต้นด้วยแบบสอบถาม</li>
@@ -345,7 +345,7 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
 
         <section>
           <h4 className="font-bold text-slate-800 mb-2">6. ทรัพย์สินทางปัญญา</h4>
-          <p>เนื้อหา ซอฟต์แวร์ และสื่อทั้งหมดบนแพลตฟอร์มเป็นทรัพย์สินของ HealthConnect หรือผู้ให้อนุญาต ห้ามทำซ้ำ ดัดแปลง หรือเผยแพร่โดยไม่ได้รับอนุญาตเป็นลายลักษณ์อักษร</p>
+          <p>เนื้อหา ซอฟต์แวร์ และสื่อทั้งหมดบนแพลตฟอร์มเป็นทรัพย์สินของ AsthmaCare หรือผู้ให้อนุญาต ห้ามทำซ้ำ ดัดแปลง หรือเผยแพร่โดยไม่ได้รับอนุญาตเป็นลายลักษณ์อักษร</p>
         </section>
 
         <section>
@@ -364,7 +364,7 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
 
         <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 mt-4">
           <p className="text-slate-500 text-xs text-center">
-            © 2569 HealthConnect — สงวนลิขสิทธิ์ทั้งหมด
+            © 2569 AsthmaCare — สงวนลิขสิทธิ์ทั้งหมด
           </p>
         </div>
       </div>
@@ -483,7 +483,7 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
         <section>
           <h4 className="font-bold text-slate-800 mb-2">8. ติดต่อเรา</h4>
           <div className="bg-slate-50 border border-slate-200 rounded-lg p-3 space-y-1">
-            <p className="text-xs">📧 อีเมล: privacy@healthconnect.co.th</p>
+            <p className="text-xs">📧 อีเมล: privacy@asthmacare.co.th</p>
             <p className="text-xs">📞 โทร: 02-xxx-xxxx (จันทร์-ศุกร์ 9:00-17:00 น.)</p>
             <p className="text-xs">📍 เจ้าหน้าที่คุ้มครองข้อมูลส่วนบุคคล (DPO)</p>
           </div>
@@ -491,7 +491,7 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
 
         <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 mt-4">
           <p className="text-slate-500 text-xs text-center">
-            © 2569 HealthConnect — สงวนลิขสิทธิ์ทั้งหมด
+            © 2569 AsthmaCare — สงวนลิขสิทธิ์ทั้งหมด
           </p>
         </div>
       </div>
@@ -737,7 +737,7 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
           <>
             <div className="p-6 pb-0 text-center">
               <span className="text-4xl block mb-2">🩺</span>
-              <h3 className="text-xl font-bold gradient-text">HealthConnect</h3>
+              <h3 className="text-xl font-bold gradient-text">AsthmaCare</h3>
             </div>
 
             {/* Tabs */}
@@ -800,7 +800,7 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
                 <span className="text-sm font-medium text-slate-600">เข้าสู่ระบบด้วย Google</span>
               </div>
 
-              <p className="text-xs text-slate-400 mb-4 text-center">เลือกบัญชีเพื่อดำเนินการต่อไปยัง HealthConnect</p>
+              <p className="text-xs text-slate-400 mb-4 text-center">เลือกบัญชีเพื่อดำเนินการต่อไปยัง AsthmaCare</p>
 
               <div className="space-y-2">
                 {googleAccounts.map((account, index) => (
