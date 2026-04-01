@@ -287,7 +287,7 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
         <h3 className="text-lg font-bold text-slate-800">📋 เงื่อนไขการใช้บริการ</h3>
       </div>
 
-      <div className="space-y-4 text-sm text-slate-600 leading-relaxed max-h-[55vh] overflow-y-auto pr-2">
+      <div className="space-y-4 text-sm text-slate-600 leading-relaxed pr-2">
         <div className="bg-blue-50 border border-blue-100 rounded-xl p-4">
           <p className="text-blue-700 font-semibold text-xs">มีผลบังคับใช้ตั้งแต่: 1 มกราคม 2569</p>
         </div>
@@ -391,7 +391,7 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
         <h3 className="text-lg font-bold text-slate-800">🔒 นโยบายความเป็นส่วนตัว</h3>
       </div>
 
-      <div className="space-y-4 text-sm text-slate-600 leading-relaxed max-h-[55vh] overflow-y-auto pr-2">
+      <div className="space-y-4 text-sm text-slate-600 leading-relaxed pr-2">
         <div className="bg-green-50 border border-green-100 rounded-xl p-4">
           <p className="text-green-700 font-semibold text-xs">ปรับปรุงล่าสุด: 1 มกราคม 2569</p>
         </div>
