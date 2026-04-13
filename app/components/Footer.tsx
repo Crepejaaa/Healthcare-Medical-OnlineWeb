@@ -364,7 +364,7 @@ export default function Footer() {
           </section>
 
           <div className="bg-slate-50 border border-slate-200 rounded-xl p-4">
-            <p className="text-xs text-slate-500 text-center">📧 ติดต่อ DPO: privacy@asthmacare.co.th</p>
+            <p className="text-xs text-slate-500 text-center">📧 ติดต่อ DPO: privacy@Asthmacare.co.th</p>
           </div>
         </div>
       ),

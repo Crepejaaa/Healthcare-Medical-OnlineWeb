@@ -46,7 +46,7 @@ export default function HowItWorks() {
           {steps.map((step, i) => (
             <div
               key={i}
-              className="text-center relative group cursor-default"
+              className={`text-center relative group cursor-default reveal-up stagger-${i + 1}`}
             >
               {/* Step Number */}
               <div className="absolute -top-2 -right-2 w-7 h-7 bg-slate-800 text-white rounded-full text-xs font-bold flex items-center justify-center z-10 group-hover:bg-blue-600 group-hover:scale-110 transition-all duration-300">

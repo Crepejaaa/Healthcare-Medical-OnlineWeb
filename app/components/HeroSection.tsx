@@ -34,7 +34,7 @@ export default function HeroSection() {
             href="#packages"
             className="inline-block bg-gradient-to-r from-cyan-500 to-teal-500 text-white text-lg px-8 py-4 rounded-2xl font-semibold hover:shadow-xl hover:shadow-cyan-200 transition-all duration-300 hover:-translate-y-1 btn-ripple active:scale-95"
           >
-            🎉 ดูแพ็กเกจดูแลโรคหอบหืดรายเดือน
+            🎉 ปรึกษาแพทย์
           </a>
           <a
             href="#screening"

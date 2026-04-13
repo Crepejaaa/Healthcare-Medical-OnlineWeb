@@ -341,3 +341,54 @@ textarea:focus {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+/* ============================================
+   Scrollytelling — Reveal Animations
+   ============================================ */
+.reveal-up,
+.reveal-left,
+.reveal-right,
+.reveal-scale,
+.reveal-fade {
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.reveal-up    { opacity: 0; transform: translateY(48px); }
+.reveal-left  { opacity: 0; transform: translateX(-48px); }
+.reveal-right { opacity: 0; transform: translateX(48px); }
+.reveal-scale { opacity: 0; transform: scale(0.85); }
+.reveal-fade  { opacity: 0; }
+
+.reveal-up.in-view,
+.reveal-left.in-view,
+.reveal-right.in-view,
+.reveal-scale.in-view,
+.reveal-fade.in-view {
+  opacity: 1;
+  transform: none;
+}
+
+/* Stagger delay helpers */
+.stagger-1 { --reveal-delay: 100ms; }
+.stagger-2 { --reveal-delay: 200ms; }
+.stagger-3 { --reveal-delay: 300ms; }
+.stagger-4 { --reveal-delay: 400ms; }
+.stagger-5 { --reveal-delay: 500ms; }
+.stagger-6 { --reveal-delay: 600ms; }
+
+/* Scrollytelling text enter (used with key prop) */
+@keyframes scrollyTextEnter {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.scrolly-text-enter {
+  animation: scrollyTextEnter 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Slide in up (for sticky panel text) */
+@keyframes slideInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

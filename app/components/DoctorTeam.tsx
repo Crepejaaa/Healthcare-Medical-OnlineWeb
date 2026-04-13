@@ -8,7 +8,7 @@ export default function DoctorTeam() {
   return (
     <section className="py-20 bg-gradient-to-br from-slate-50 to-blue-50">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-14">
+        <div className="text-center mb-14 reveal-up">
           <span className="inline-block bg-blue-100 text-blue-700 px-4 py-1.5 rounded-full text-sm font-medium mb-4">
             👨‍⚕️ Our Doctors
           </span>
@@ -22,7 +22,7 @@ export default function DoctorTeam() {
           {doctors.map((doc, i) => (
             <div
               key={i}
-              className="card-interactive bg-white rounded-3xl p-6 shadow-lg border border-slate-100 group relative overflow-hidden"
+              className={`card-interactive bg-white rounded-3xl p-6 shadow-lg border border-slate-100 group relative overflow-hidden reveal-up stagger-${i + 1}`}
             >
               {/* Available badge */}
               {doc.available && (

@@ -7,7 +7,7 @@ export default function HealthArticles() {
   return (
     <section id="articles" className="py-20 bg-slate-50">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-14">
+        <div className="text-center mb-14 reveal-up">
           <span className="inline-block bg-pink-100 text-pink-700 px-4 py-1.5 rounded-full text-sm font-medium mb-4">
             📚 Health Articles
           </span>
@@ -21,7 +21,7 @@ export default function HealthArticles() {
           {articles.map((article, i) => (
             <article
               key={i}
-              className="card-interactive bg-white rounded-3xl shadow-lg overflow-hidden group cursor-pointer border border-slate-100"
+              className={`card-interactive bg-white rounded-3xl shadow-lg overflow-hidden group cursor-pointer border border-slate-100 reveal-scale stagger-${i + 1}`}
             >
               {/* Image Area */}
               <div className="h-48 bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center overflow-hidden relative">

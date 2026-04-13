@@ -75,7 +75,7 @@ export default function Testimonials() {
   return (
     <section className="py-20 bg-gradient-to-br from-blue-50 via-white to-indigo-50">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-14">
+        <div className="text-center mb-14 reveal-up">
           <span className="inline-block bg-yellow-100 text-yellow-700 px-4 py-1.5 rounded-full text-sm font-medium mb-4">
             ⭐ Reviews
           </span>
