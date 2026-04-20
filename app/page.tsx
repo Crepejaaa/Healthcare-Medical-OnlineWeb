@@ -5,7 +5,7 @@ import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import HowItWorks from './components/HowItWorks';
 import ScrollytellingSection from './components/ScrollytellingSection';
-import PackagesSection from './components/PackagesSection';
+
 import DoctorTeam from './components/DoctorTeam';
 import ScreeningForm from './components/ScreeningForm';
 import Testimonials from './components/Testimonials';
@@ -26,7 +26,7 @@ export default function Home() {
       <HeroSection />
       <HowItWorks />
       <ScrollytellingSection />
-      <PackagesSection />
+
       <DoctorTeam />
       <ScreeningForm />
       <Testimonials />

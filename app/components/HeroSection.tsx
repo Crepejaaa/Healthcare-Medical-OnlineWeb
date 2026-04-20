@@ -31,7 +31,7 @@ export default function HeroSection() {
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
-            href="#packages"
+            href="#doctors"
             className="inline-block bg-gradient-to-r from-cyan-500 to-teal-500 text-white text-lg px-8 py-4 rounded-2xl font-semibold hover:shadow-xl hover:shadow-cyan-200 transition-all duration-300 hover:-translate-y-1 btn-ripple active:scale-95"
           >
             🎉 ปรึกษาแพทย์
