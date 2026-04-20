@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 
 interface NavbarProps {
   onLoginClick: () => void;
@@ -28,6 +29,11 @@ export default function Navbar({ onLoginClick }: NavbarProps) {
             </a>
           </li>
 
+          <li>
+            <Link href="/consult" className="nav-link text-slate-600 hover:text-blue-600 transition-colors py-1">
+              ปรึกษาแพทย์
+            </Link>
+          </li>
           <li>
             <a href="#screening" className="nav-link text-slate-600 hover:text-blue-600 transition-colors py-1">
               คัดกรองอาการ
@@ -85,6 +91,13 @@ export default function Navbar({ onLoginClick }: NavbarProps) {
             หน้าแรก
           </a>
 
+          <Link
+            href="/consult"
+            onClick={() => setMenuOpen(false)}
+            className="block py-2 text-slate-600 hover:text-blue-600 font-medium hover:translate-x-1 transition-all"
+          >
+            ปรึกษาแพทย์
+          </Link>
           <a
             href="#screening"
             onClick={() => setMenuOpen(false)}
