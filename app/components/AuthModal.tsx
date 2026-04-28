@@ -402,7 +402,7 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
           <div className="mt-2 space-y-2">
             <div className="bg-white border border-slate-100 rounded-lg p-3">
               <p className="font-semibold text-slate-700 text-xs mb-1">📌 ข้อมูลระบุตัวตน</p>
-              <p className="text-xs">ชื่อ-นามสกุล อีเมล เบอร์โทรศัพท์ วันเกิด</p>
+              <p className="text-xs">ชื่อ-นามสกุล อีเมล เบอร์โทรศัพท์ </p>
             </div>
             <div className="bg-white border border-slate-100 rounded-lg p-3">
               <p className="font-semibold text-slate-700 text-xs mb-1">🏥 ข้อมูลสุขภาพ</p>
@@ -526,23 +526,21 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
         {(['email', 'otp', 'reset'] as ForgotStep[]).map((step, index) => (
           <div key={step} className="flex items-center flex-1">
             <div
-              className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold transition-all duration-300 ${
-                forgotStep === step
+              className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold transition-all duration-300 ${forgotStep === step
                   ? 'bg-blue-600 text-white scale-110 shadow-lg shadow-blue-200'
                   : index < ['email', 'otp', 'reset'].indexOf(forgotStep)
-                  ? 'bg-green-500 text-white'
-                  : 'bg-slate-200 text-slate-400'
-              }`}
+                    ? 'bg-green-500 text-white'
+                    : 'bg-slate-200 text-slate-400'
+                }`}
             >
               {index < ['email', 'otp', 'reset'].indexOf(forgotStep) ? '✓' : index + 1}
             </div>
             {index < 2 && (
               <div
-                className={`flex-1 h-1 mx-1 rounded-full transition-all duration-500 ${
-                  index < ['email', 'otp', 'reset'].indexOf(forgotStep)
+                className={`flex-1 h-1 mx-1 rounded-full transition-all duration-500 ${index < ['email', 'otp', 'reset'].indexOf(forgotStep)
                     ? 'bg-green-400'
                     : 'bg-slate-200'
-                }`}
+                  }`}
               />
             )}
           </div>
@@ -661,9 +659,8 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
                     {[1, 2, 3, 4].map((level) => (
                       <div
                         key={level}
-                        className={`h-1.5 flex-1 rounded-full transition-all duration-500 ${
-                          level <= resetStrength.level ? resetStrength.color : 'bg-slate-200'
-                        }`}
+                        className={`h-1.5 flex-1 rounded-full transition-all duration-500 ${level <= resetStrength.level ? resetStrength.color : 'bg-slate-200'
+                          }`}
                       />
                     ))}
                   </div>
@@ -680,11 +677,10 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
                 value={forgotConfirmPassword}
                 onChange={(e) => setForgotConfirmPassword(e.target.value)}
                 placeholder="••••••••"
-                className={`w-full border p-3 rounded-xl bg-slate-50 focus:ring-2 focus:ring-blue-400 focus:border-blue-400 outline-none transition-all text-sm ${
-                  forgotConfirmPassword && forgotConfirmPassword !== forgotNewPassword
+                className={`w-full border p-3 rounded-xl bg-slate-50 focus:ring-2 focus:ring-blue-400 focus:border-blue-400 outline-none transition-all text-sm ${forgotConfirmPassword && forgotConfirmPassword !== forgotNewPassword
                     ? 'border-red-300 focus:ring-red-300'
                     : 'border-slate-200'
-                }`}
+                  }`}
                 onKeyDown={(e) => e.key === 'Enter' && handleResetPassword()}
               />
               {forgotConfirmPassword && forgotConfirmPassword !== forgotNewPassword && (
@@ -711,9 +707,8 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
       }}
     >
       <div
-        className={`bg-white rounded-3xl w-full max-w-md shadow-2xl overflow-hidden transition-all duration-300 relative ${
-          shakeForm ? 'animate-[shake_0.5s_ease]' : ''
-        } ${isOpen ? 'scale-100 opacity-100' : 'scale-90 opacity-0'}`}
+        className={`bg-white rounded-3xl w-full max-w-md shadow-2xl overflow-hidden transition-all duration-300 relative ${shakeForm ? 'animate-[shake_0.5s_ease]' : ''
+          } ${isOpen ? 'scale-100 opacity-100' : 'scale-90 opacity-0'}`}
       >
         {/* Success Overlay */}
         {showSuccess && (
@@ -751,17 +746,15 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
               />
               <button
                 onClick={() => setActiveTab('login')}
-                className={`flex-1 py-2.5 text-sm font-semibold rounded-lg relative z-10 transition-colors duration-300 cursor-pointer ${
-                  activeTab === 'login' ? 'text-blue-600' : 'text-slate-400'
-                }`}
+                className={`flex-1 py-2.5 text-sm font-semibold rounded-lg relative z-10 transition-colors duration-300 cursor-pointer ${activeTab === 'login' ? 'text-blue-600' : 'text-slate-400'
+                  }`}
               >
                 เข้าสู่ระบบ
               </button>
               <button
                 onClick={() => setActiveTab('register')}
-                className={`flex-1 py-2.5 text-sm font-semibold rounded-lg relative z-10 transition-colors duration-300 cursor-pointer ${
-                  activeTab === 'register' ? 'text-blue-600' : 'text-slate-400'
-                }`}
+                className={`flex-1 py-2.5 text-sm font-semibold rounded-lg relative z-10 transition-colors duration-300 cursor-pointer ${activeTab === 'register' ? 'text-blue-600' : 'text-slate-400'
+                  }`}
               >
                 สมัครสมาชิก
               </button>
@@ -808,11 +801,10 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
                     key={index}
                     onClick={() => handleSelectGoogleAccount(index)}
                     disabled={googleLoading}
-                    className={`w-full flex items-center gap-3 p-3.5 rounded-xl border-2 transition-all duration-300 cursor-pointer group ${
-                      selectedGoogleAccount === index
+                    className={`w-full flex items-center gap-3 p-3.5 rounded-xl border-2 transition-all duration-300 cursor-pointer group ${selectedGoogleAccount === index
                         ? 'border-blue-500 bg-blue-50 shadow-md shadow-blue-100'
                         : 'border-slate-100 hover:border-blue-300 hover:bg-slate-50'
-                    } disabled:opacity-60 disabled:cursor-not-allowed`}
+                      } disabled:opacity-60 disabled:cursor-not-allowed`}
                   >
                     <div className={`w-10 h-10 rounded-full ${account.color} flex items-center justify-center text-xl shadow-sm`}>
                       {account.avatar}
@@ -826,9 +818,8 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
                     {selectedGoogleAccount === index && googleLoading ? (
                       <span className="w-5 h-5 border-2 border-blue-200 border-t-blue-600 rounded-full animate-spin" />
                     ) : (
-                      <span className={`text-slate-300 group-hover:text-blue-500 transition-colors ${
-                        selectedGoogleAccount === index ? 'text-blue-500' : ''
-                      }`}>
+                      <span className={`text-slate-300 group-hover:text-blue-500 transition-colors ${selectedGoogleAccount === index ? 'text-blue-500' : ''
+                        }`}>
                         →
                       </span>
                     )}
@@ -969,9 +960,8 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
                       {[1, 2, 3, 4].map((level) => (
                         <div
                           key={level}
-                          className={`h-1.5 flex-1 rounded-full transition-all duration-500 ${
-                            level <= strength.level ? strength.color : 'bg-slate-200'
-                          }`}
+                          className={`h-1.5 flex-1 rounded-full transition-all duration-500 ${level <= strength.level ? strength.color : 'bg-slate-200'
+                            }`}
                         />
                       ))}
                     </div>
@@ -988,11 +978,10 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
                   value={regConfirm}
                   onChange={(e) => setRegConfirm(e.target.value)}
                   placeholder="••••••••"
-                  className={`w-full border p-3 rounded-xl bg-slate-50 focus:ring-2 focus:ring-blue-400 focus:border-blue-400 outline-none transition-all text-sm ${
-                    regConfirm && regConfirm !== regPassword
+                  className={`w-full border p-3 rounded-xl bg-slate-50 focus:ring-2 focus:ring-blue-400 focus:border-blue-400 outline-none transition-all text-sm ${regConfirm && regConfirm !== regPassword
                       ? 'border-red-300 focus:ring-red-300'
                       : 'border-slate-200'
-                  }`}
+                    }`}
                 />
                 {regConfirm && regConfirm !== regPassword && (
                   <p className="text-xs text-red-500 mt-1 animate-[fadeIn_0.3s_ease]">รหัสผ่านไม่ตรงกัน</p>

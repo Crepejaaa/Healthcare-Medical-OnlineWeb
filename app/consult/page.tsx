@@ -157,8 +157,8 @@ export default function ConsultPage() {
       const replies = [
         'ขอบคุณที่แจ้งข้อมูลครับ ผมกำลังตรวจสอบอาการของคุณ',
         'อาการที่คุณอธิบายมานั้น ผมแนะนำให้ใช้ยาพ่นฉุกเฉินก่อนนะครับ',
-        'คุณมีค่า Peak Flow ล่าสุดไหมครับ? จะช่วยให้ประเมินอาการได้ดีขึ้น',
-        'ผมจะสั่งยาพ่นควบคุมอาการให้ใหม่นะครับ และนัดติดตามอาการอีก 2 สัปดาห์',
+        'คุมีค่า Peak Flow ล่าสุดไหมครับ? จะช่วยให้ประเมินอาการได้ดีขึ้น',
+        'ผมจะแนะนำยาพ่นควบคุมอาการให้ใหม่นะครับ และนัดติดตามอาการอีก 2 สัปดาห์',
       ];
       const reply = replies[Math.floor(Math.random() * replies.length)];
       const replyTime = new Date().toLocaleTimeString('th-TH', { hour: '2-digit', minute: '2-digit' });
@@ -194,7 +194,7 @@ export default function ConsultPage() {
                 ปรึกษาแพทย์เฉพาะทาง<span className="gradient-text">โรคหอบหืด</span>
               </h1>
               <p className="text-slate-500 max-w-2xl mx-auto text-lg">
-                พูดคุยกับแพทย์ผู้เชี่ยวชาญด้านระบบทางเดินหายใจผ่านวิดีโอคอลหรือแชท ได้ตลอด 24 ชั่วโมง
+                พูดคุยกับแพทย์ผู้เชี่ยวชาญด้านระบบทางเดินหายใจผ่านแชท
               </p>
             </div>
           )}
@@ -216,20 +216,18 @@ export default function ConsultPage() {
                   return (
                     <div key={step.key} className="flex flex-col items-center relative z-10">
                       <div
-                        className={`w-10 h-10 rounded-full flex items-center justify-center text-lg font-bold transition-all duration-300 ${
-                          isActive
-                            ? 'bg-gradient-to-r from-blue-500 to-cyan-500 text-white shadow-lg shadow-blue-200 scale-110'
-                            : isCompleted
+                        className={`w-10 h-10 rounded-full flex items-center justify-center text-lg font-bold transition-all duration-300 ${isActive
+                          ? 'bg-gradient-to-r from-blue-500 to-cyan-500 text-white shadow-lg shadow-blue-200 scale-110'
+                          : isCompleted
                             ? 'bg-green-500 text-white'
                             : 'bg-white border-2 border-slate-200 text-slate-400'
-                        }`}
+                          }`}
                       >
                         {isCompleted ? '✓' : step.icon}
                       </div>
                       <span
-                        className={`text-xs mt-2 font-medium transition-colors ${
-                          isActive ? 'text-blue-600' : isCompleted ? 'text-green-600' : 'text-slate-400'
-                        }`}
+                        className={`text-xs mt-2 font-medium transition-colors ${isActive ? 'text-blue-600' : isCompleted ? 'text-green-600' : 'text-slate-400'
+                          }`}
                       >
                         {step.label}
                       </span>
@@ -247,22 +245,12 @@ export default function ConsultPage() {
               <div className="flex justify-center gap-4 mb-8">
                 <button
                   onClick={() => setConsultType('video')}
-                  className={`flex items-center gap-2 px-6 py-3 rounded-2xl font-semibold text-sm transition-all duration-300 cursor-pointer ${
-                    consultType === 'video'
-                      ? 'bg-gradient-to-r from-blue-600 to-cyan-600 text-white shadow-lg shadow-blue-200'
-                      : 'bg-white text-slate-600 border border-slate-200 hover:border-blue-300'
-                  }`}
+                  className={`flex items-center gap-2 px-6 py-3 rounded-2xl font-semibold text-sm transition-all duration-300 cursor-pointer ${consultType === 'video'
+                    ? 'bg-gradient-to-r from-blue-600 to-cyan-600 text-white shadow-lg shadow-blue-200'
+                    : 'bg-white text-slate-600 border border-slate-200 hover:border-blue-300'
+                    }`}
                 >
-                  📹 วิดีโอคอล
-                </button>
-                <button
-                  onClick={() => setConsultType('chat')}
-                  className={`flex items-center gap-2 px-6 py-3 rounded-2xl font-semibold text-sm transition-all duration-300 cursor-pointer ${
-                    consultType === 'chat'
-                      ? 'bg-gradient-to-r from-blue-600 to-cyan-600 text-white shadow-lg shadow-blue-200'
-                      : 'bg-white text-slate-600 border border-slate-200 hover:border-blue-300'
-                  }`}
-                >
+
                   💬 แชทกับแพทย์
                 </button>
               </div>
@@ -281,13 +269,12 @@ export default function ConsultPage() {
                   <div
                     key={doc.id}
                     onClick={() => doc.available && setSelectedDoctor(doc)}
-                    className={`card-interactive bg-white rounded-3xl p-6 shadow-md border-2 group relative overflow-hidden fade-in-up transition-all duration-300 ${
-                      !doc.available
-                        ? 'opacity-50 cursor-not-allowed border-slate-100'
-                        : selectedDoctor?.id === doc.id
+                    className={`card-interactive bg-white rounded-3xl p-6 shadow-md border-2 group relative overflow-hidden fade-in-up transition-all duration-300 ${!doc.available
+                      ? 'opacity-50 cursor-not-allowed border-slate-100'
+                      : selectedDoctor?.id === doc.id
                         ? 'border-blue-500 shadow-xl shadow-blue-100 ring-2 ring-blue-200'
                         : 'border-slate-100 hover:border-blue-200 cursor-pointer'
-                    }`}
+                      }`}
                     style={{ animationDelay: `${i * 0.08}s` }}
                   >
                     {/* Status Badge */}
@@ -337,11 +324,10 @@ export default function ConsultPage() {
                 <button
                   onClick={() => selectedDoctor && setCurrentStep('fill-symptoms')}
                   disabled={!selectedDoctor}
-                  className={`px-10 py-4 rounded-2xl font-bold text-lg transition-all duration-300 btn-ripple ${
-                    selectedDoctor
-                      ? 'bg-gradient-to-r from-blue-600 to-cyan-600 text-white hover:shadow-xl hover:shadow-blue-200 hover:-translate-y-1 active:scale-95 cursor-pointer'
-                      : 'bg-slate-200 text-slate-400 cursor-not-allowed'
-                  }`}
+                  className={`px-10 py-4 rounded-2xl font-bold text-lg transition-all duration-300 btn-ripple ${selectedDoctor
+                    ? 'bg-gradient-to-r from-blue-600 to-cyan-600 text-white hover:shadow-xl hover:shadow-blue-200 hover:-translate-y-1 active:scale-95 cursor-pointer'
+                    : 'bg-slate-200 text-slate-400 cursor-not-allowed'
+                    }`}
                 >
                   ถัดไป — กรอกอาการ →
                 </button>
@@ -374,11 +360,10 @@ export default function ConsultPage() {
                     <button
                       key={item.id}
                       onClick={() => setSymptoms((prev) => ({ ...prev, mainSymptom: item.id }))}
-                      className={`p-4 rounded-2xl border-2 text-left transition-all duration-300 cursor-pointer group ${
-                        symptoms.mainSymptom === item.id
-                          ? 'border-blue-500 bg-blue-50 shadow-md'
-                          : 'border-slate-100 bg-white hover:border-blue-200 hover:bg-blue-50/30'
-                      }`}
+                      className={`p-4 rounded-2xl border-2 text-left transition-all duration-300 cursor-pointer group ${symptoms.mainSymptom === item.id
+                        ? 'border-blue-500 bg-blue-50 shadow-md'
+                        : 'border-slate-100 bg-white hover:border-blue-200 hover:bg-blue-50/30'
+                        }`}
                     >
                       <span className="text-2xl block mb-1 group-hover:scale-110 transition-transform">{item.icon}</span>
                       <p className="text-sm font-semibold text-slate-800">{item.label}</p>
@@ -452,11 +437,10 @@ export default function ConsultPage() {
                     <button
                       key={trigger.id}
                       onClick={() => toggleTrigger(trigger.id)}
-                      className={`p-3 rounded-xl border-2 text-center transition-all duration-300 cursor-pointer text-xs ${
-                        symptoms.triggers.includes(trigger.id)
-                          ? 'border-amber-400 bg-amber-50 shadow-sm'
-                          : 'border-slate-100 hover:border-amber-200'
-                      }`}
+                      className={`p-3 rounded-xl border-2 text-center transition-all duration-300 cursor-pointer text-xs ${symptoms.triggers.includes(trigger.id)
+                        ? 'border-amber-400 bg-amber-50 shadow-sm'
+                        : 'border-slate-100 hover:border-amber-200'
+                        }`}
                     >
                       <span className="text-lg block mb-1">{trigger.icon}</span>
                       <span className="font-medium text-slate-700">{trigger.label}</span>
@@ -474,11 +458,10 @@ export default function ConsultPage() {
                   {CURRENT_MEDICATIONS.map((med) => (
                     <label
                       key={med.id}
-                      className={`flex items-center gap-3 p-3.5 rounded-xl border-2 cursor-pointer transition-all duration-300 ${
-                        symptoms.medications.includes(med.id)
-                          ? 'border-teal-400 bg-teal-50'
-                          : 'border-slate-100 hover:border-teal-200 hover:bg-teal-50/30'
-                      }`}
+                      className={`flex items-center gap-3 p-3.5 rounded-xl border-2 cursor-pointer transition-all duration-300 ${symptoms.medications.includes(med.id)
+                        ? 'border-teal-400 bg-teal-50'
+                        : 'border-slate-100 hover:border-teal-200 hover:bg-teal-50/30'
+                        }`}
                     >
                       <input
                         type="checkbox"
@@ -548,11 +531,10 @@ export default function ConsultPage() {
                       }
                     }}
                     disabled={!symptoms.mainSymptom || !symptoms.severity || !symptoms.duration}
-                    className={`flex-1 py-4 rounded-2xl font-bold text-lg transition-all duration-300 btn-ripple ${
-                      symptoms.mainSymptom && symptoms.severity && symptoms.duration
-                        ? 'bg-gradient-to-r from-blue-600 to-cyan-600 text-white hover:shadow-xl hover:shadow-blue-200 cursor-pointer active:scale-95'
-                        : 'bg-slate-200 text-slate-400 cursor-not-allowed'
-                    }`}
+                    className={`flex-1 py-4 rounded-2xl font-bold text-lg transition-all duration-300 btn-ripple ${symptoms.mainSymptom && symptoms.severity && symptoms.duration
+                      ? 'bg-gradient-to-r from-blue-600 to-cyan-600 text-white hover:shadow-xl hover:shadow-blue-200 cursor-pointer active:scale-95'
+                      : 'bg-slate-200 text-slate-400 cursor-not-allowed'
+                      }`}
                   >
                     ถัดไป →
                   </button>
@@ -586,11 +568,10 @@ export default function ConsultPage() {
                       setSelectedDate('now');
                       setSelectedTime('now');
                     }}
-                    className={`w-full p-5 rounded-2xl border-2 transition-all duration-300 cursor-pointer ${
-                      selectedDate === 'now'
-                        ? 'border-green-500 bg-green-50 shadow-md'
-                        : 'border-slate-100 hover:border-green-300'
-                    }`}
+                    className={`w-full p-5 rounded-2xl border-2 transition-all duration-300 cursor-pointer ${selectedDate === 'now'
+                      ? 'border-green-500 bg-green-50 shadow-md'
+                      : 'border-slate-100 hover:border-green-300'
+                      }`}
                   >
                     <div className="flex items-center gap-3">
                       <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center text-2xl">⚡</div>
@@ -625,11 +606,10 @@ export default function ConsultPage() {
                     <button
                       key={day.date}
                       onClick={() => { setSelectedDate(day.date); setSelectedTime(''); }}
-                      className={`min-w-[80px] p-3 rounded-2xl border-2 text-center transition-all duration-300 cursor-pointer flex-shrink-0 ${
-                        selectedDate === day.date
-                          ? 'border-blue-500 bg-blue-50 shadow-md'
-                          : 'border-slate-100 hover:border-blue-200'
-                      }`}
+                      className={`min-w-[80px] p-3 rounded-2xl border-2 text-center transition-all duration-300 cursor-pointer flex-shrink-0 ${selectedDate === day.date
+                        ? 'border-blue-500 bg-blue-50 shadow-md'
+                        : 'border-slate-100 hover:border-blue-200'
+                        }`}
                     >
                       <p className="text-xs text-slate-500">{day.dayName}</p>
                       <p className="text-xl font-bold text-slate-800">{day.dayNum}</p>
@@ -652,11 +632,10 @@ export default function ConsultPage() {
                         <button
                           key={slot.time}
                           onClick={() => setSelectedTime(slot.time)}
-                          className={`p-3 rounded-xl border-2 text-center transition-all duration-300 cursor-pointer ${
-                            selectedTime === slot.time
-                              ? 'border-blue-500 bg-blue-50 shadow-md'
-                              : 'border-slate-100 hover:border-blue-200'
-                          }`}
+                          className={`p-3 rounded-xl border-2 text-center transition-all duration-300 cursor-pointer ${selectedTime === slot.time
+                            ? 'border-blue-500 bg-blue-50 shadow-md'
+                            : 'border-slate-100 hover:border-blue-200'
+                            }`}
                         >
                           <p className="text-sm font-bold text-slate-800">{slot.time}</p>
                           <p className="text-[10px] text-slate-400">{slot.period}</p>
@@ -677,11 +656,10 @@ export default function ConsultPage() {
                   <button
                     onClick={() => (selectedDate && (selectedDate === 'now' || selectedTime)) && setCurrentStep('confirm')}
                     disabled={!selectedDate || (selectedDate !== 'now' && !selectedTime)}
-                    className={`flex-1 py-4 rounded-2xl font-bold text-lg transition-all duration-300 btn-ripple ${
-                      selectedDate && (selectedDate === 'now' || selectedTime)
-                        ? 'bg-gradient-to-r from-blue-600 to-cyan-600 text-white hover:shadow-xl hover:shadow-blue-200 cursor-pointer active:scale-95'
-                        : 'bg-slate-200 text-slate-400 cursor-not-allowed'
-                    }`}
+                    className={`flex-1 py-4 rounded-2xl font-bold text-lg transition-all duration-300 btn-ripple ${selectedDate && (selectedDate === 'now' || selectedTime)
+                      ? 'bg-gradient-to-r from-blue-600 to-cyan-600 text-white hover:shadow-xl hover:shadow-blue-200 cursor-pointer active:scale-95'
+                      : 'bg-slate-200 text-slate-400 cursor-not-allowed'
+                      }`}
                   >
                     ถัดไป →
                   </button>
@@ -838,9 +816,8 @@ export default function ConsultPage() {
                   {[0, 1, 2, 3, 4].map((i) => (
                     <div
                       key={i}
-                      className={`w-3 h-3 rounded-full transition-all duration-500 ${
-                        i <= waitingSeconds ? 'bg-blue-500 scale-110' : 'bg-slate-200'
-                      }`}
+                      className={`w-3 h-3 rounded-full transition-all duration-500 ${i <= waitingSeconds ? 'bg-blue-500 scale-110' : 'bg-slate-200'
+                        }`}
                     />
                   ))}
                 </div>
@@ -897,17 +874,15 @@ export default function ConsultPage() {
                   <div className="p-6 flex items-center justify-center gap-4">
                     <button
                       onClick={() => setIsMuted(!isMuted)}
-                      className={`w-14 h-14 rounded-full flex items-center justify-center text-xl transition-all duration-300 cursor-pointer ${
-                        isMuted ? 'bg-red-500 text-white' : 'bg-slate-700 text-white hover:bg-slate-600'
-                      }`}
+                      className={`w-14 h-14 rounded-full flex items-center justify-center text-xl transition-all duration-300 cursor-pointer ${isMuted ? 'bg-red-500 text-white' : 'bg-slate-700 text-white hover:bg-slate-600'
+                        }`}
                     >
                       {isMuted ? '🔇' : '🎤'}
                     </button>
                     <button
                       onClick={() => setIsVideoOff(!isVideoOff)}
-                      className={`w-14 h-14 rounded-full flex items-center justify-center text-xl transition-all duration-300 cursor-pointer ${
-                        isVideoOff ? 'bg-red-500 text-white' : 'bg-slate-700 text-white hover:bg-slate-600'
-                      }`}
+                      className={`w-14 h-14 rounded-full flex items-center justify-center text-xl transition-all duration-300 cursor-pointer ${isVideoOff ? 'bg-red-500 text-white' : 'bg-slate-700 text-white hover:bg-slate-600'
+                        }`}
                     >
                       {isVideoOff ? '📵' : '📹'}
                     </button>
@@ -972,11 +947,10 @@ export default function ConsultPage() {
                           </div>
                         )}
                         <div
-                          className={`rounded-2xl p-4 max-w-[75%] shadow-sm ${
-                            msg.sender === 'patient'
-                              ? 'bg-blue-600 text-white rounded-tr-sm'
-                              : 'bg-white text-slate-700 rounded-tl-sm'
-                          }`}
+                          className={`rounded-2xl p-4 max-w-[75%] shadow-sm ${msg.sender === 'patient'
+                            ? 'bg-blue-600 text-white rounded-tr-sm'
+                            : 'bg-white text-slate-700 rounded-tl-sm'
+                            }`}
                         >
                           <p className="text-sm">{msg.text}</p>
                           <span className={`text-[10px] mt-1 block ${msg.sender === 'patient' ? 'text-blue-200' : 'text-slate-400'}`}>
@@ -1016,11 +990,10 @@ export default function ConsultPage() {
                     <button
                       onClick={handleSendChat}
                       disabled={!chatInput.trim()}
-                      className={`w-10 h-10 rounded-full flex items-center justify-center text-lg transition-all cursor-pointer ${
-                        chatInput.trim()
-                          ? 'bg-blue-600 text-white hover:bg-blue-700'
-                          : 'bg-slate-100 text-slate-400'
-                      }`}
+                      className={`w-10 h-10 rounded-full flex items-center justify-center text-lg transition-all cursor-pointer ${chatInput.trim()
+                        ? 'bg-blue-600 text-white hover:bg-blue-700'
+                        : 'bg-slate-100 text-slate-400'
+                        }`}
                     >
                       ➤
                     </button>

@@ -185,9 +185,8 @@ export default function ScrollytellingSection() {
               {steps.map((_, i) => (
                 <div
                   key={i}
-                  className={`h-1 rounded-full transition-all duration-500 ${
-                    i === activeStep ? 'w-8 bg-white' : i < activeStep ? 'w-3 bg-white/30' : 'w-3 bg-white/12'
-                  }`}
+                  className={`h-1 rounded-full transition-all duration-500 ${i === activeStep ? 'w-8 bg-white' : i < activeStep ? 'w-3 bg-white/30' : 'w-3 bg-white/12'
+                    }`}
                 />
               ))}
             </div>
@@ -239,9 +238,8 @@ export default function ScrollytellingSection() {
           {steps.map((_, i) => (
             <div
               key={i}
-              className={`w-1 rounded-full transition-all duration-500 ${
-                i === activeStep ? 'h-7 bg-white' : 'h-2 bg-white/20'
-              }`}
+              className={`w-1 rounded-full transition-all duration-500 ${i === activeStep ? 'h-7 bg-white' : 'h-2 bg-white/20'
+                }`}
             />
           ))}
         </div>

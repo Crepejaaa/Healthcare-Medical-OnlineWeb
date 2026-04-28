@@ -20,8 +20,8 @@ export default function HowItWorks() {
     },
     {
       icon: '💊',
-      title: 'ปรับยา/ส่งยา',
-      desc: 'รับคำแนะนำการรักษา และจัดส่งยาพ่นควบคุมถึงบ้าน',
+      title: 'คำแนะนำการรักษา',
+      desc: 'รับคำแนะนำการรักษา',
       color: 'bg-teal-100 text-teal-600',
     },
   ];

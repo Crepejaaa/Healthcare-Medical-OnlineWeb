@@ -11,7 +11,7 @@ export default function HeroSection() {
       <div className="container mx-auto px-4 text-center relative z-10">
         {/* Badge */}
         <div className="inline-block bg-blue-100 text-blue-700 px-4 py-1.5 rounded-full text-sm font-medium mb-6 hover:bg-blue-200 transition-colors cursor-default">
-          🏥 บริการเปิดให้ใช้งาน 24 ชั่วโมง ทุกวัน
+          🏥 บริการเปิดให้ใช้งานทุกวัน
         </div>
 
         {/* Headline */}
@@ -25,7 +25,7 @@ export default function HeroSection() {
         </p>
         <p className="text-sm md:text-base text-slate-500 mb-10 max-w-2xl mx-auto leading-relaxed">
           หอบกำเริบ หายใจมีเสียงหวีด ไอเรื้อรัง หรือต้องการปรึกษาวิธีการใช้ยาพ่น?
-          ให้ทีมแพทย์เฉพาะทางด้านระบบทางเดินหายใจดูแลคุณและคนที่คุณรักตลอด 24 ชั่วโมง
+          ให้ทีมแพทย์เฉพาะทางด้านระบบทางเดินหายใจดูแลคุณและคนที่คุณรัก
         </p>
 
         {/* CTA Buttons */}

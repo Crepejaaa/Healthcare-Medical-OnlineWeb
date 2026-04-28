@@ -311,7 +311,7 @@ export default function Footer() {
             <div className="space-y-2">
               <div className="bg-white border border-slate-100 rounded-lg p-3">
                 <p className="font-semibold text-slate-700 text-xs mb-1">📌 ข้อมูลระบุตัวตน</p>
-                <p className="text-xs text-slate-500">ชื่อ-นามสกุล อีเมล เบอร์โทรศัพท์ วันเกิด</p>
+                <p className="text-xs text-slate-500">ชื่อ-นามสกุล อีเมล เบอร์โทรศัพท์ </p>
               </div>
               <div className="bg-white border border-slate-100 rounded-lg p-3">
                 <p className="font-semibold text-slate-700 text-xs mb-1">🏥 ข้อมูลสุขภาพ</p>
@@ -418,14 +418,6 @@ export default function Footer() {
             </div>
           </section>
 
-          <section>
-            <h4 className="font-bold text-slate-800 mb-2">5. ค่าบริการ</h4>
-            <ul className="list-disc pl-5 space-y-1 text-sm text-slate-600">
-              <li>ค่าบริการจะระบุไว้อย่างชัดเจนก่อนการใช้บริการ</li>
-              <li>การชำระเงินสามารถทำผ่านช่องทางที่กำหนดไว้ในแพลตฟอร์ม</li>
-              <li>นโยบายการคืนเงินเป็นไปตามเงื่อนไขที่กำหนด</li>
-            </ul>
-          </section>
 
           <section>
             <h4 className="font-bold text-slate-800 mb-2">6. ทรัพย์สินทางปัญญา</h4>

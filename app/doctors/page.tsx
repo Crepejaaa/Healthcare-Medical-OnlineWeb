@@ -13,7 +13,7 @@ export default function DoctorsPage() {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar onLoginClick={() => setAuthModalOpen(true)} />
-      
+
       <main className="flex-grow bg-slate-50 py-12 md:py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-14 fade-in-up">
@@ -22,7 +22,7 @@ export default function DoctorsPage() {
             </span>
             <h1 className="text-3xl md:text-5xl font-bold mb-4">รายชื่อแพทย์ผู้เชี่ยวชาญ</h1>
             <p className="text-slate-500 max-w-2xl mx-auto text-lg">
-              แพทย์ผู้เชี่ยวชาญด้านโรคระบบทางเดินหายใจและภูมิแพ้ที่พร้อมให้คำปรึกษาดูแลคุณตลอด 24 ชั่วโมง
+              แพทย์ผู้เชี่ยวชาญด้านโรคระบบทางเดินหายใจและภูมิแพ้ที่พร้อมให้คำปรึกษาดูแลคุณตลอด
             </p>
           </div>
 
@@ -41,10 +41,10 @@ export default function DoctorsPage() {
                   </div>
                 )}
                 {!doc.available && (
-                   <div className="absolute top-4 right-4 flex items-center gap-1.5 bg-slate-50 px-2 py-1 rounded-full border border-slate-100">
+                  <div className="absolute top-4 right-4 flex items-center gap-1.5 bg-slate-50 px-2 py-1 rounded-full border border-slate-100">
                     <span className="w-2.5 h-2.5 bg-slate-300 rounded-full" />
                     <span className="text-xs text-slate-400 font-medium">ออฟไลน์</span>
-                  </div>                 
+                  </div>
                 )}
 
                 <div
@@ -60,7 +60,7 @@ export default function DoctorsPage() {
                   <p className="text-sm border border-blue-100 bg-blue-50 text-blue-700 font-semibold px-3 py-1 rounded-full inline-block mb-3">
                     {doc.specialty}
                   </p>
-                  
+
                   <div className="text-sm text-slate-500 mb-4 space-y-1">
                     <p>🏥 {doc.hospital}</p>
                     <p>🎓 ประสบการณ์ {doc.experience}</p>
@@ -72,11 +72,10 @@ export default function DoctorsPage() {
                       {Array.from({ length: 5 }).map((_, j) => (
                         <span
                           key={j}
-                          className={`text-sm transition-all duration-300 ${
-                            j < Math.round(doc.rating)
+                          className={`text-sm transition-all duration-300 ${j < Math.round(doc.rating)
                               ? 'text-yellow-400 group-hover:scale-125'
                               : 'text-slate-200'
-                          }`}
+                            }`}
                           style={{ transitionDelay: `${j * 60}ms` }}
                         >
                           ★
@@ -94,11 +93,11 @@ export default function DoctorsPage() {
               </div>
             ))}
           </div>
-          
+
           <div className="mt-16 text-center">
-              <Link href="/" className="text-slate-500 hover:text-blue-600 font-medium transition-colors border-b border-transparent hover:border-blue-600 pb-1">
-                 ← กลับสู่หน้าหลัก
-              </Link>
+            <Link href="/" className="text-slate-500 hover:text-blue-600 font-medium transition-colors border-b border-transparent hover:border-blue-600 pb-1">
+              ← กลับสู่หน้าหลัก
+            </Link>
           </div>
         </div>
       </main>
